@@ -1,0 +1,17 @@
+# mount point	fstype    device    	[device2]
+
+/mrd            emmc      /dev/block/mmcblk0p1      flags=display="MRD 0";backup=1
+/mrd1           emmc      /dev/block/mmcblk0p2      flags=display="MRD 1";backup=1
+/mep2           emmc      /dev/block/mmcblk0p3      flags=display="MEP2";backup=1
+/efs            ext4      /dev/block/mmcblk0p4      flags=display="EFS";backup=1
+/dtim           emmc      /dev/block/mmcblk0p5      flags=display="DTIM";backup=1
+/recovery       emmc      /dev/block/mmcblk0p9      flags=display="Recovery";flashimg=1
+/boot           emmc      /dev/block/mmcblk0p10     flags=display="Boot";backup=1;flashimg=1
+/radio          emmc      /dev/block/mmcblk0p11     flags=display="Radio";backup=1
+/custom         ext4      /dev/block/mmcblk0p12     flags=display="Custom";backup=1
+/cache          ext4      /dev/block/mmcblk0p14     flags=display="Cache";canbewiped;wipeingui;wipeduringfactoryreset
+/system         ext4      /dev/block/mmcblk0p15     flags=display="System";backup=1;canbewiped;wipeingui
+/data           ext4      /dev/block/mmcblk0p16     flags=length=-16384;display="Data";backup=1;canbewiped;wipeingui;wipeduringfactoryreset
+
+/sdcard         vfat      /dev/block/mmcblk1p1     /dev/block/mmcblk1 flags=display="Micro SDcard";storage;wipeingui;removable
+/mnt/sdcard     vfat      /dev/block/mmcblk1p1     /dev/block/mmcblk1 flags=display="Micro SDcard";storage;wipeingui;removable
