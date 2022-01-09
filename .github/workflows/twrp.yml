@@ -41,7 +41,9 @@ jobs:
           rm -rf $i/samsung/goya
           git clone --single-branch git://github.com/TriDiscord/twrp_$i\_samsung_goya.git $i/samsung/goya
         done
-  
+        
+        git clone --branch android-4.4.4_r1 --single-branch https://android.googlesource.com/platform/external/mksh platform/external/mksh
+
     - name: Building TWRP
       run: |
         export PATH="$HOME/.jdk_7/jdk1.7.0_80/bin:$PATH"
