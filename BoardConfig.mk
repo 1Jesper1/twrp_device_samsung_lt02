@@ -43,6 +43,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TW_THEME := portrait_mdpi
 TW_MTP_DEVICE := "/dev/mtp_usb"
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
+TARGET_USES_LOGD := true
 
 TARGET_RECOVERY_INITRC := device/samsung/goya/recovery/root/init.rc
 

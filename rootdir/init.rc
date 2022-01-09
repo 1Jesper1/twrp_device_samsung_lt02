@@ -1,7 +1,6 @@
 import /init.recovery.logd.rc
 import /init.recovery.usb.rc
 import /init.recovery.service.rc
-import /init.recovery.vold_decrypt.rc
 import /init.recovery.${ro.hardware}.rc
 
 on early-init
@@ -18,7 +17,7 @@ on early-init
     start ueventd
     start healthd
 
-service set_permissive /sbin/permissive.sh
+service set_permissive /sbin/toolbox setenforce 0
     oneshot
     seclabel u:r:recovery:s0
 
@@ -51,6 +50,9 @@ on init
 
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/vm/max_map_count 1000000
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+    write /sys/block/mmcblk0boot0/force_ro 0
+    write /sys/block/mmcblk0boot1/force_ro 0
 
 # ko files for exfat
     insmod /lib/modules/exfat_core.ko
