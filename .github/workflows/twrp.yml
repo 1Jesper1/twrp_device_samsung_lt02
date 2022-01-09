@@ -25,10 +25,13 @@ jobs:
       run: |
         mkdir ~/TWRP
         cd ~/TWRP
-
+        
+        mkdir ~/.bin
+        curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
+        
         CORES_USED=$(nproc --all)
-        repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
-        repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$CORES_USED
+        python3 ~/.bin/repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
+        python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$CORES_USED
 
         for i in device; do
           rm -rf $i/samsung/goya
