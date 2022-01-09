@@ -20,7 +20,7 @@ I use Huawei's cloud repositories to get the JDK versions instead of downloading
 mkdir ~/.jdk_7
 cd ~/.jdk_7
 wget https://repo.huaweicloud.com/java/jdk/7u80-b15/jdk-7u80-linux-i586.tar.gz
-tar –xzf jdk-7u80-linux-i586.tar.gz
+tar -xzf jdk-7u80-linux-i586.tar.gz
 ```
 
 ### Installing Oracle JDK 7
