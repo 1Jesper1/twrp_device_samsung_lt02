@@ -4,7 +4,7 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 $(call inherit-product, build/target/product/languages_small.mk)
 
-PRODUCT_COPY_FILES += device/samsung/j2xlte/prebuilt/zImage:kernel
+PRODUCT_COPY_FILES += device/samsung/j1pop3g/prebuilt/zImage:kernel
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := goya

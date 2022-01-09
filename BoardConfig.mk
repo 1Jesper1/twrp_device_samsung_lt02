@@ -20,7 +20,7 @@ TARGET_NO_BOOTLOADER := true
 #TARGET_NO_RADIOIMAGE := true
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/samsung/goya/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/goya/prebuilt/zImage
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive androidboot.hardware=pxa988
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_OFFSET := 0x00008000
