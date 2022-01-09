@@ -9,7 +9,7 @@ cd ~/TWRP
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
-lunch omni_j1pop3g-eng
+lunch omni_goya-eng
 mka recoveryimage
 ```
 
