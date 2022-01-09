@@ -19,7 +19,7 @@ jobs:
         mkdir ~/.jdk_7
         cd ~/.jdk_7
         wget https://repo.huaweicloud.com/java/jdk/7u80-b15/jdk-7u80-linux-i586.tar.gz
-        tar –xzf jdk-7u80-linux-i586.tar.gz
+        tar -xzf jdk-7u80-linux-i586.tar.gz
 
     - name: Syncing TWRP sources
       run: |
@@ -46,4 +46,3 @@ jobs:
         export LC_ALL=C
         lunch omni_goya-eng
         mka recoveryimage
-  
