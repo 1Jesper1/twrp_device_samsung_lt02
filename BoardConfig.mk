@@ -45,7 +45,7 @@ TW_MTP_DEVICE := "/dev/mtp_usb"
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USES_LOGD := true
 
-TARGET_RECOVERY_INITRC := device/samsung/goya/recovery/root/init.rc
+TARGET_RECOVERY_INITRC := device/samsung/goya/rootdir/init.rc
 
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
