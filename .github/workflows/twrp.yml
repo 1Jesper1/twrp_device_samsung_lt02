@@ -33,7 +33,7 @@ jobs:
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
         
-        CORES_USED=$(nproc --all)
+        CORES_USED=16
         python3 ~/.bin/repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$CORES_USED
 
@@ -54,4 +54,11 @@ jobs:
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
         lunch omni_goya-eng
-        mka recoveryimage
+        make -j16 recoveryimage
+    
+    - name: Uploading TWRP builds
+    - uses: actions/upload-artifact@v2
+      with:
+        name: twrp
+        path: |
+          /home/runner/TWRP/out/target/product/goya/recovery.*
