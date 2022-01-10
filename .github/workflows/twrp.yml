@@ -11,6 +11,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      OEM: samsung
+      DEVICE: goya
+
     steps:
     - uses: actions/checkout@v2
 
@@ -37,8 +41,8 @@ jobs:
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
         for i in device; do
-          rm -rf $i/samsung/goya
-          git clone --single-branch git://github.com/TriDiscord/twrp_$i\_samsung_goya.git $i/samsung/goya
+          rm -rf $i/${{env.OEM}}/${{env.DEVICE}}
+          git clone --single-branch git://github.com/TriDiscord/twrp_$i\_${{env.OEM}}_${{env.DEVICE}}.git $i/${{env.OEM}}/${{env.DEVICE}}
         done
 
         git clone --branch android-4.4.4_r1 --single-branch https://android.googlesource.com/platform/external/mksh platform/external/mksh
@@ -52,11 +56,11 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
-        lunch omni_goya-eng
+        lunch omni_${{env.DEVICE}}-eng
         mka recoveryimage
 
     - name: Uploading TWRP builds
       uses: actions/upload-artifact@v2
       with:
         name: twrp
-        path: /home/runner/TWRP/out/target/product/goya/recovery.*
+        path: /home/runner/TWRP/out/target/product/${{env.DEVICE}}/recovery.*
