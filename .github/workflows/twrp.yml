@@ -57,8 +57,7 @@ jobs:
         make -j16 recoveryimage
     
     - name: Uploading TWRP builds
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: twrp
-        path: |
-          /home/runner/TWRP/out/target/product/goya/recovery.*
+        path: /home/runner/TWRP/out/target/product/goya/recovery.*
