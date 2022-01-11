@@ -9,7 +9,12 @@ PRODUCT_AAPT_CONFIG      := large mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_LOCALES          += mdpi
 
-PRODUCT_COPY_FILES += device/samsung/goya/prebuilt/zImage:kernel
+# PRODUCT_COPY_FILES += device/samsung/goya/prebuilt/zImage:kernel
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    charger
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE       := goya

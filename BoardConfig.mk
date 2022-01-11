@@ -15,12 +15,17 @@ BOARD_VENDOR                 := samsung
 TARGET_GLOBAL_CFLAGS   += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
+
 # U-boot
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
+
 # Kernel
-TARGET_PREBUILT_KERNEL   := device/samsung/goya/prebuilt/zImage
+# TARGET_PREBUILT_KERNEL := device/samsung/goya/prebuilt/zImage
+TARGET_KERNEL_SOURCE     := kernel/samsung/goya
+TARGET_KERNEL_CONFIG     := recovery_goya_defconfig
+
 BOARD_KERNEL_CMDLINE     := androidboot.selinux=permissive androidboot.hardware=pxa988
 BOARD_KERNEL_BASE        := 0x10000000
 BOARD_KERNEL_OFFSET      := 0x00008000
@@ -30,6 +35,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_MKBOOTIMG_ARGS     := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --cmdline "androidboot.selinux=permissive androidboot.hardware=pxa988"
 BOARD_CUSTOM_BOOTIMG_MK  := device/samsung/goya/mkbootimg.mk
 BOARD_KERNEL_PAGESIZE    := 2048
+
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
@@ -41,12 +47,15 @@ BOARD_FLASH_BLOCK_SIZE             := 4096
 TARGET_USERIMAGES_USE_EXT4         := true
 BOARD_HAS_NO_MISC_PARTITION        := true
 
+
 # Update OTA
 BLOCK_BASED_OTA := false
+
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE   := goya,goyawifi,goya3g
 BOARD_HAS_NO_SELECT_BUTTON := true
+
 
 # TWRP
 BOARD_USES_MMCUTILS        := true
@@ -54,6 +63,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_RECOVERY_SWIPE       := true
 RECOVERY_FSTAB_VERSION     := 2
 TARGET_RECOVERY_FSTAB      := device/samsung/goya/rootdir/fstab.pxa988
+
 
 TW_THEME                     := portrait_mdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
@@ -84,6 +94,7 @@ TW_USE_TOOLBOX          := true
 
 RECOVERY_SDCARD_ON_DATA := true
 
+
 # MRVL hardware + Graphics
 BOARD_USES_MRVL_HARDWARE     := true
 MRVL_ION                     := true
@@ -93,9 +104,11 @@ USE_OPENGL_RENDERER          := true
 BOARD_USE_BGRA_8888          := true
 BOARD_HAVE_PIXEL_FORMAT_INFO := true
 
+
 # Resolution
 TARGET_SCREEN_HEIGHT := 1024
 TARGET_SCREEN_WIDTH  := 600
+
 
 # Charging mode
 BOARD_LPM_BOOT_ARGUMENT_NAME  := lpm_boot
