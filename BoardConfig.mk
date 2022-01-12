@@ -77,8 +77,8 @@ RECOVERY_GRAPHICS_USE_LINELENGTH      := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE    := true
 
-TW_INTERNAL_STORAGE_PATH        := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_INTERNAL_STORAGE_PATH        := "/sdcard"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_EXTERNAL_STORAGE_PATH        := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 BOARD_HAS_NO_REAL_SDCARD        := true
@@ -92,7 +92,7 @@ TW_INCLUDE_FUSE_EXFAT   := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone1/temp"
 TW_USE_TOOLBOX          := true
 
-RECOVERY_SDCARD_ON_DATA := true
+RECOVERY_SDCARD_ON_DATA := false
 
 
 # MRVL hardware + Graphics
