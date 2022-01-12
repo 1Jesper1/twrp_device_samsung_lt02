@@ -61,7 +61,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USES_MMCUTILS        := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_RECOVERY_SWIPE       := true
-RECOVERY_FSTAB_VERSION     := 2
+RECOVERY_FSTAB_VERSION     := 1
 TARGET_RECOVERY_FSTAB      := device/samsung/goya/rootdir/fstab.pxa988
 
 

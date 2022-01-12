@@ -7,4 +7,4 @@ on init
     insmod /system/lib/modules/exfat_fs.ko
     
     # Set touchscreen to portrait mode for recovery
-    write /sys/devices/virtual/sec/tsp/orientation 0
+    #write /sys/devices/virtual/sec/tsp/orientation 0
