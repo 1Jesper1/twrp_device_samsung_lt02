@@ -12,8 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      # Change PRODUCT to "twrp" if building Android 11 or newer
+      PRODUCT: omni
+
+      # Branch of minimal TWRP manifest
+      BRANCH_MANIFEST: twrp-4.4-deprecated
+
+      # Branch for device sources (device tree and kernel)
+      BRANCH_SOURCES: android-4.4
+
+      # Device OEM info
       OEM: samsung
       DEVICE: goya
+
+      # mksh support
+      SYNC_MKSH: true
+      MKSH_BRANCH: android-4.4.4_r1
 
     steps:
     - uses: actions/checkout@v2
@@ -37,15 +51,34 @@ jobs:
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
 
-        python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
+        python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b ${{ env.BRANCH_MANIFEST }}
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
         for i in device kernel; do
-          rm -rf $i/${{env.OEM}}/${{env.DEVICE}}
-          git clone --single-branch https://github.com/TriDiscord/twrp_$i\_${{env.OEM}}_${{env.DEVICE}}.git $i/${{env.OEM}}/${{env.DEVICE}}
+          rm -rf $i/${{ env.OEM }}/${{ env.DEVICE }}
+          git clone --branch ${{ env.BRANCH_SOURCES }} --single-branch https://github.com/TriDiscord/twrp_$i\_${{ env.OEM }}_${{ env.DEVICE }}.git $i/${{ env.OEM }}/${{ env.DEVICE }}
         done
 
-        git clone --branch android-4.4.4_r1 --single-branch https://android.googlesource.com/platform/external/mksh platform/external/mksh
+    - name: Download mksh
+      if: ${{ env.MKSH_BRANCH == 'true' }}
+      run: |
+        cd ~/TWRP
+        git clone --branch ${{ env.MKSH_BRANCH }} --single-branch https://android.googlesource.com/platform/external/mksh platform/external/mksh
+
+    - name: Restore cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.ccache
+            ~/TWRP/out
+          key: ${{ runner.os }}-${{ env.PRODUCT }}-${{ env.DEVICE }}
+          restore-keys: ${{ runner.os }}-${{ env.PRODUCT }}-${{ env.DEVICE }}
+
+    - name: Setup CCACHE
+        uses: alexjurkiewicz/setup-ccache@master
+        with:
+          max-size: 6G
+          extra-config: keep_comments_cpp = false
 
     - name: Building TWRP
       run: |
@@ -56,11 +89,11 @@ jobs:
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         export LC_ALL=C
-        lunch omni_${{env.DEVICE}}-eng
+        lunch ${{ env.PRODUCT }}_${{ env.DEVICE }}-eng
         mka recoveryimage
 
     - name: Uploading TWRP builds
       uses: actions/upload-artifact@v2
       with:
         name: twrp
-        path: /home/runner/TWRP/out/target/product/${{env.DEVICE}}/recovery.*
+        path: /home/runner/TWRP/out/target/product/${{ env.DEVICE }}/recovery.*
