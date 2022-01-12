@@ -65,7 +65,7 @@ RECOVERY_FSTAB_VERSION     := 1
 TARGET_RECOVERY_FSTAB      := device/samsung/goya/rootdir/fstab.pxa988
 
 
-TW_THEME                     := portrait_mdpi
+TW_THEME                     := landscape_mdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USES_LOGD             := true
 
