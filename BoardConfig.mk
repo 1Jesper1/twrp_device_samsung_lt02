@@ -9,6 +9,7 @@ TARGET_CPU_VARIANT           := cortex-a9
 TARGET_CPU_SMP               := true
 TARGET_SOC                   := pxa988
 ARCH_ARM_HAVE_TLS_REGISTER   := true
+ARCH_ARM_HAVE_NEON           := true
 TARGET_BOOTLOADER_BOARD_NAME := PXA988
 BOARD_VENDOR                 := samsung
 
