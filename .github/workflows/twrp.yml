@@ -66,19 +66,19 @@ jobs:
         git clone --branch ${{ env.MKSH_BRANCH }} --single-branch https://android.googlesource.com/platform/external/mksh platform/external/mksh
 
     - name: Restore cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.ccache
-            ~/TWRP/out
-          key: ${{ runner.os }}-${{ env.PRODUCT }}-${{ env.DEVICE }}
-          restore-keys: ${{ runner.os }}-${{ env.PRODUCT }}-${{ env.DEVICE }}
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.ccache
+          ~/TWRP/out
+        key: ${{ runner.os }}-${{ env.PRODUCT }}-${{ env.DEVICE }}
+        restore-keys: ${{ runner.os }}-${{ env.PRODUCT }}-${{ env.DEVICE }}
 
     - name: Setup CCACHE
-        uses: alexjurkiewicz/setup-ccache@master
-        with:
-          max-size: 6G
-          extra-config: keep_comments_cpp = false
+      uses: alexjurkiewicz/setup-ccache@master
+      with:
+        max-size: 6G
+        extra-config: keep_comments_cpp = false
 
     - name: Building TWRP
       run: |
