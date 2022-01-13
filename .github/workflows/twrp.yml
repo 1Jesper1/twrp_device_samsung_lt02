@@ -49,7 +49,7 @@ jobs:
           git clone --single-branch https://github.com/TriDiscord/twrp_$i\_${{env.OEM}}_${{env.DEVICE}}.git $i/${{env.OEM}}/${{env.DEVICE}}
         done
 
-        curl https://gist.githubusercontent.com/TriDiscord/e8091057c29b9decece088a8d20e2315/raw/24ee8e23ec6167a5ee5549f6179fc35467a47c7d/main.mk > ~/TWRP/build/core/main.mk
+        git clone --branch android-4.4.4_r1 --single-branch https://android.googlesource.com/platform/external/mksh platform/external/mksh
 
     - name: Building TWRP
       run: |
