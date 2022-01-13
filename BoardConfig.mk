@@ -86,8 +86,7 @@ SP1_NAME                        := "efs"
 SP1_BACKUP_METHOD               := files
 
 TW_EXCLUDE_TWRPAPP      := true
-TW_EXCLUDE_MTP          := false
-TW_NO_USB_STORAGE       := true
+TW_NO_USB_STORAGE       := false
 TW_INCLUDE_FUSE_EXFAT   := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone1/temp"
 TW_USE_TOOLBOX          := true
