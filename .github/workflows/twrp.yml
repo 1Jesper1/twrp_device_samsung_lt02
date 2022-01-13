@@ -1,8 +1,8 @@
 name: TWRP CI
 
 on:
-  push:
-    branches: [ android-4.4 ]
+  workflow_dispatch:
+
   pull_request:
     branches: [ android-4.4 ]
 
