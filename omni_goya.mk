@@ -11,10 +11,11 @@ PRODUCT_LOCALES          += mdpi
 
 # Rootdir
 PRODUCT_COPY_FILES += \
-    device/samsung/goya/recovery/root/init.rc:/root/init.rc \
-    device/samsung/goya/recovery/root/init.recovery.usb.rc:/root/init.recovery.usb.rc \
-    device/samsung/goya/recovery/root/lpm.rc:/root/lpm.rc \
-    device/samsung/goya/recovery/root/ueventd.pxa988.rc:/root/ueventd.pxa988.rc
+    device/samsung/goya/recovery/root/init.rc:root/init.rc \
+    device/samsung/goya/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc \
+    device/samsung/goya/recovery/root/lpm.rc:root/lpm.rc \
+    device/samsung/goya/recovery/root/ueventd.pxa988.rc:root/ueventd.pxa988.rc \
+    device/samsung/goya/recovery/root/etc/ffs-check.sh:root/etc/ffs-check.sh
 
 # Charger
 PRODUCT_PACKAGES += \
