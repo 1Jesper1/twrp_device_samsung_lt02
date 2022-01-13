@@ -9,7 +9,12 @@ PRODUCT_AAPT_CONFIG      := large mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_LOCALES          += mdpi
 
-# PRODUCT_COPY_FILES += device/samsung/goya/prebuilt/zImage:kernel
+# Rootdir
+PRODUCT_COPY_FILES += \
+    device/samsung/goya/rootdir/init.rc:/root/init.rc \
+    device/samsung/goya/rootdir/init.recovery.usb.rc:/root/init.recovery.usb.rc \
+    device/samsung/goya/rootdir/lpm.rc:/root/lpm.rc \
+    device/samsung/goya/rootdir/ueventd.pxa988.rc:/root/ueventd.pxa988.rc
 
 # Charger
 PRODUCT_PACKAGES += \

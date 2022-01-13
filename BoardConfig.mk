@@ -64,6 +64,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_RECOVERY_SWIPE       := true
 RECOVERY_FSTAB_VERSION     := 2
 TARGET_RECOVERY_FSTAB      := device/samsung/goya/recovery.fstab
+BOARD_UMS_LUNFILE          := "/sys/class/android_usb/f_mass_storage/lun/file"
 
 
 TW_THEME                     := landscape_mdpi

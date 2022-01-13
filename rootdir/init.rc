@@ -89,10 +89,6 @@ on boot
 
     class_start default
 
-# Load properties, pre-Android 6.0
-on load_all_props_action
-    load_all_props
-
 on firmware_mounts_complete
     rm /dev/.booting
 
@@ -131,8 +127,6 @@ service ueventd /sbin/ueventd
 service healthd /sbin/healthd -r
     critical
     seclabel u:r:healthd:s0
-
-service recovery /sbin/recovery
 
 service adbd /sbin/adbd --root_seclabel=u:r:su:s0 --device_banner=recovery
     disabled
