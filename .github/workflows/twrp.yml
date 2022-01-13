@@ -31,13 +31,15 @@ jobs:
         tar -xzf jdk-7u80-linux-i586.tar.gz
         sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev \
           gcc-multilib g++-multilib libc6-dev-i386 libncurses5 lib32ncurses5-dev x11proto-core-dev \
-          libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig python-is-python2 \
-          schedtool
+          libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig schedtool
+
+        sudo ln -f -s /usr/bin/python2.7 /usr/bin/python
+
     - name: Syncing TWRP sources
       run: |
         mkdir ~/TWRP
         cd ~/TWRP
-        
+
         mkdir ~/.bin
         curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
         python3 ~/.bin/repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-4.4-deprecated
@@ -47,6 +49,7 @@ jobs:
           git clone --single-branch https://github.com/TriDiscord/twrp_$i\_${{env.OEM}}_${{env.DEVICE}}.git $i/${{env.OEM}}/${{env.DEVICE}}
         done
         git clone --branch android-4.4.4_r1 --single-branch https://android.googlesource.com/platform/external/mksh platform/external/mksh
+
     - name: Building TWRP
       run: |
         export PATH="$HOME/.jdk_7/jdk1.7.0_80/bin:$PATH"
@@ -57,6 +60,7 @@ jobs:
         export LC_ALL=C
         lunch omni_${{env.DEVICE}}-eng
         mka recoveryimage
+
     - name: Uploading TWRP builds
       uses: actions/upload-artifact@v2
       with:
