@@ -70,10 +70,14 @@ BOARD_UMS_LUNFILE          := "/sys/class/android_usb/f_mass_storage/lun/file"
 TW_THEME                     := landscape_mdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
-TARGET_RECOVERY_INITRC := device/samsung/goya/rootdir/init.rc
+TARGET_RECOVERY_INITRC := device/samsung/goya/recovery/root/init.rc
 
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
 RECOVERY_GRAPHICS_USE_LINELENGTH      := true
+
+# TODO: Fix timeout instead of directly bypassing it
+TW_NO_SCREEN_TIMEOUT    := true
+TW_NO_SCREEN_BLANK      := true
 
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE    := true
@@ -89,8 +93,8 @@ SP1_BACKUP_METHOD               := files
 TW_EXCLUDE_TWRPAPP      := true
 TW_NO_USB_STORAGE       := false
 TW_INCLUDE_FUSE_EXFAT   := true
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone1/temp"
-TW_USE_TOOLBOX          := true
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone0/temp"
+TW_INCLUDE_CRYPTO       := false
 
 RECOVERY_SDCARD_ON_DATA := false
 

@@ -2,7 +2,7 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, build/target/product/embedded.mk)
 
 $(call inherit-product, build/target/product/full_base_telephony.mk)
-$(call inherit-product, build/target/product/languages_small.mk)
+$(call inherit-product, build/target/product/languages_full.mk)
 
 # Enable higher-res drawables while keeping mdpi as primary source
 PRODUCT_AAPT_CONFIG      := large mdpi hdpi xhdpi
@@ -11,10 +11,10 @@ PRODUCT_LOCALES          += mdpi
 
 # Rootdir
 PRODUCT_COPY_FILES += \
-    device/samsung/goya/rootdir/init.rc:/root/init.rc \
-    device/samsung/goya/rootdir/init.recovery.usb.rc:/root/init.recovery.usb.rc \
-    device/samsung/goya/rootdir/lpm.rc:/root/lpm.rc \
-    device/samsung/goya/rootdir/ueventd.pxa988.rc:/root/ueventd.pxa988.rc
+    device/samsung/goya/recovery/root/init.rc:/root/init.rc \
+    device/samsung/goya/recovery/root/init.recovery.usb.rc:/root/init.recovery.usb.rc \
+    device/samsung/goya/recovery/root/lpm.rc:/root/lpm.rc \
+    device/samsung/goya/recovery/root/ueventd.pxa988.rc:/root/ueventd.pxa988.rc
 
 # Charger
 PRODUCT_PACKAGES += \
