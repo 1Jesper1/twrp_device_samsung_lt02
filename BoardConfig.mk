@@ -65,9 +65,9 @@ BOARD_RECOVERY_SWIPE       := true
 RECOVERY_FSTAB_VERSION     := 2
 TARGET_RECOVERY_FSTAB      := device/samsung/goya/recovery.fstab
 BOARD_UMS_LUNFILE          := "/sys/class/android_usb/f_mass_storage/lun/file"
-TW_CUSTOM_CPU_TEMP_PATH    := "/sys/class/thermal/thermal_zone0/temp"
+#TW_CUSTOM_CPU_TEMP_PATH    := "/sys/class/thermal/thermal_zone0/temp"
 
-TW_THEME                     := landscape_mdpi
+TW_THEME                     := portrait_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
 TARGET_RECOVERY_INITRC      := device/samsung/goya/recovery/root/init.rc
@@ -93,8 +93,8 @@ SP1_BACKUP_METHOD               := files
 
 TW_EXCLUDE_TWRPAPP      := true
 TW_USE_TOOLBOX          := false
-TW_NO_USB_STORAGE       := false
-TW_EXCLUDE_MTP          := true
+TW_NO_USB_STORAGE       := true
+TW_EXCLUDE_MTP          := false
 TW_INCLUDE_FUSE_EXFAT   := true
 TW_INCLUDE_CRYPTO       := false
 TW_NO_CPU_TEMP          := true
