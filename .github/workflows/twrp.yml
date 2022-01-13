@@ -3,13 +3,18 @@ name: TWRP CI
 on:
   workflow_dispatch:
 
+  push:
+    branches: [ android-4.4 ]
   pull_request:
     branches: [ android-4.4 ]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    name: TWRP Build CI
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-18.04]
 
     env:
       OEM: samsung
