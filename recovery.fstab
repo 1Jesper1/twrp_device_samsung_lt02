@@ -1,7 +1,7 @@
 # mount point	fstype    device    	[device2]
 
-/mrd            emmc      /dev/block/mmcblk0p1      flags=display="MRD 0";backup=1
-/mrd1           emmc      /dev/block/mmcblk0p2      flags=display="MRD 1";backup=1
+/mrd            emmc      /dev/block/mmcblk0p1      flags=display="MRD";backup=1
+/mrd1           emmc      /dev/block/mmcblk0p2      flags=backup=1;subpartitionof=/mrd
 /mep2           emmc      /dev/block/mmcblk0p3      flags=display="MEP2";backup=1
 /efs            ext4      /dev/block/mmcblk0p4      flags=display="EFS";backup=1
 /dtim           emmc      /dev/block/mmcblk0p5      flags=display="DTIM";backup=1
