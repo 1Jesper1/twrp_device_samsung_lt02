@@ -47,7 +47,7 @@ jobs:
 
         for i in device kernel; do
           rm -rf $i/${{env.OEM}}/${{env.DEVICE}}
-          git clone --single-branch https://github.com/T11x-TWRP/twrp_$i\_${{env.OEM}}_${.DEVICE}}.git $i/${{env.OEM}}/${{env.DEVICE}}
+          git clone --single-branch https://github.com/T11x-TWRP/twrp_$i\_${{env.OEM}}_${{env.DEVICE}}.git $i/${{env.OEM}}/${{env.DEVICE}}
         done
 
     - name: Building TWRP
