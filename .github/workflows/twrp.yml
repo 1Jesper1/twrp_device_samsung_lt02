@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [ android-4.4 ]
+    branches: [ twrp-4.4 ]
   pull_request:
-    branches: [ android-4.4 ]
+    branches: [ twrp-4.4 ]
 
 jobs:
   build:
