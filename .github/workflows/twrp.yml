@@ -45,6 +45,11 @@ jobs:
         python3 ~/.bin/repo init --depth=1 -u https://github.com/T11x-TWRP/platform_manifest_twrp_omni.git -b twrp-4.4
         python3 ~/.bin/repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
+        for i in device kernel; do
+          rm -rf $i/${{env.OEM}}/${{env.DEVICE}}
+          git clone --single-branch https://github.com/T11x-TWRP/twrp_$i\_${{env.OEM}}_${.DEVICE}}.git $i/${{env.OEM}}/${{env.DEVICE}}
+        done
+
     - name: Building TWRP
       run: |
         export PATH="$HOME/.jdk_7/jdk1.7.0_80/bin:$PATH"
