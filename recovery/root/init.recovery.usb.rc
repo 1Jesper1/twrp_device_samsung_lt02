@@ -1,6 +1,6 @@
 on init
-    chown system system /sys/devices/platform/mv-udc/gadget/lun0/file
-    chmod 0660 /sys/devices/platform/mv-udc/gadget/lun0/file
+    chown system system /sys/class/android_usb/f_mass_storage/lun/file
+    chmod 0660 /sys/class/android_usb/f_mass_storage/lun/file
 
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/f_rndis/manufacturer Samsung
@@ -10,8 +10,8 @@ on init
     write /sys/class/android_usb/android0/f_mass_storage/nluns 2
 
     # set up the usb mass storage lun
-    write /sys/devices/platform/mv-udc/gadget/lun0/nofua 0
-    write /sys/devices/platform/mv-udc/gadget/lun0/ro 0
+    write /sys/class/android_usb/f_mass_storage/lun/nofua 0
+    write /sys/class/android_usb/f_mass_storage/lun/ro 0
 
 on boot
     setprop sys.usb.config mtp,adb
