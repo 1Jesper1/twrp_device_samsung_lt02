@@ -1,8 +1,0 @@
-[
-  {
-    "remote": "github",
-    "repository": "T11x-TWRP/twrp_kernel_samsung_goya",
-    "target_path": "kernel/samsung/goya",
-    "revision": "twrp-4.4"
-  }
-]
