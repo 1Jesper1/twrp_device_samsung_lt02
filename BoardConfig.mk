@@ -94,6 +94,7 @@ SP1_BACKUP_METHOD               := files
 TW_EXCLUDE_TWRPAPP          := true
 TW_USE_TOOLBOX              := false
 TW_NO_USB_STORAGE           := true
+TW_EXCLUDE_DEFAULT_USB_INIT := false
 TW_INCLUDE_FUSE_EXFAT       := true
 TW_INCLUDE_CRYPTO           := false
 TW_NO_CPU_TEMP              := true
