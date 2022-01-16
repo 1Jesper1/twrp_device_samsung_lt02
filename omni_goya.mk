@@ -12,8 +12,7 @@ PRODUCT_LOCALES          += mdpi
 PRODUCT_COPY_FILES += \
 	device/samsung/goya/recovery/root/init.rc:recovery/root/init.rc \
 	device/samsung/goya/recovery/root/ueventd.pxa988.rc:recovery/root/ueventd.pxa988.rc \
-	device/samsung/goya/recovery/root/ffs-check.sh:recovery/root/ffs-check.sh \
-	device/samsung/goya/recovery/root/sbin/healthd:recovery/root/sbin/healthd
+	device/samsung/goya/recovery/root/ffs-check.sh:recovery/root/ffs-check.sh
 
 # Charger
 PRODUCT_PACKAGES += \
