@@ -68,8 +68,7 @@ BOARD_UMS_LUNFILE          := "/sys/class/android_usb/f_mass_storage/lun/file"
 TW_MTP_DEVICE              := "/dev/usb_mtp_gadget"
 #TW_CUSTOM_CPU_TEMP_PATH    := "/sys/class/thermal/thermal_zone0/temp"
 
-TW_THEME := portrait_mdpi
-TW_ROTATION := 270
+TW_THEME := landscape_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
 TARGET_RECOVERY_INITRC      := device/samsung/goya/recovery/root/init.rc
@@ -97,7 +96,6 @@ TW_USE_TOOLBOX              := false
 TW_NO_USB_STORAGE           := true
 TW_INCLUDE_FUSE_EXFAT       := true
 TW_INCLUDE_CRYPTO           := false
-TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_NO_CPU_TEMP              := true
 TW_EXTRA_LANGUAGES          := true
 
