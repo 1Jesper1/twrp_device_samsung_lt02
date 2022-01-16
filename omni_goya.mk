@@ -9,8 +9,7 @@ PRODUCT_AAPT_CONFIG      := large mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_LOCALES          += mdpi
 
-# USB
-PRODUCT_COPY_FILES += device/samsung/goya/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc
+$(call inherit-product, device/samsung/goya/rootfiles/rootfiles.mk)
 
 # Charger
 PRODUCT_PACKAGES += \
