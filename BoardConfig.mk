@@ -58,11 +58,6 @@ TARGET_OTA_ASSERT_DEVICE   := goya,goyawifi,goya3g
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 
-# Logging
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD    := true
-
-
 # TWRP
 BOARD_USES_MMCUTILS        := true
 BOARD_HAS_LARGE_FILESYSTEM := true
