@@ -91,16 +91,13 @@ BOARD_HAS_NO_REAL_SDCARD        := true
 SP1_NAME                        := "efs"
 SP1_BACKUP_METHOD               := files
 
-TW_EXCLUDE_TWRPAPP             := true
-TW_USE_TOOLBOX                 := false
-TW_EXCLUDE_DEFAULT_USB_INIT    := true
-TARGET_PROVIDES_INIT           := true
-TARGET_PROVIDES_INIT_TARGET_RC := true
-TW_INCLUDE_FUSE_EXFAT          := true
-TW_INCLUDE_CRYPTO              := false
-TW_EXCLUDE_ENCRYPTED_BACKUPS   := true
-TW_NO_CPU_TEMP                 := true
-TW_EXTRA_LANGUAGES             := true
+TW_EXCLUDE_TWRPAPP           := true
+TW_USE_TOOLBOX               := false
+TW_INCLUDE_FUSE_EXFAT        := true
+TW_INCLUDE_CRYPTO            := false
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
+TW_NO_CPU_TEMP               := true
+TW_EXTRA_LANGUAGES           := true
 
 RECOVERY_SDCARD_ON_DATA := false
 
