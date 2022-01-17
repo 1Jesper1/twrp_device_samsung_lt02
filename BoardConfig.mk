@@ -120,9 +120,3 @@ MRVL_LAUNCH_DMS_IN_SURFACEFLINGER := true
 # Resolution
 TARGET_SCREEN_HEIGHT := 600
 TARGET_SCREEN_WIDTH  := 1024
-
-
-# Charging mode
-BOARD_LPM_BOOT_ARGUMENT_NAME  := lpm_boot
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
-BOARD_LPM_BOOT_ARGUMENT_VALUE := 1
