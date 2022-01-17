@@ -97,6 +97,7 @@ TW_INCLUDE_FUSE_EXFAT        := true
 TW_INCLUDE_CRYPTO            := false
 TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_NO_CPU_TEMP               := true
+TW_NO_HAPTICS                := true
 TW_EXTRA_LANGUAGES           := true
 
 RECOVERY_SDCARD_ON_DATA := false
