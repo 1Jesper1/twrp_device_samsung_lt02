@@ -68,7 +68,7 @@ BOARD_UMS_LUNFILE          := "/sys/class/android_usb/f_mass_storage/lun/file"
 TW_MTP_DEVICE              := "/dev/usb_mtp_gadget"
 # TW_CUSTOM_CPU_TEMP_PATH  := "/sys/class/thermal/thermal_zone0/temp"
 
-TW_THEME                     := portrait_hdpi
+TW_THEME                     := landscape_hdpi
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 
 TARGET_RECOVERY_INITRC := device/samsung/goya/recovery/root/init.rc
@@ -118,5 +118,5 @@ MRVL_LAUNCH_DMS_IN_SURFACEFLINGER := true
 
 
 # Resolution
-TARGET_SCREEN_HEIGHT := 600
-TARGET_SCREEN_WIDTH  := 1024
+TARGET_SCREEN_HEIGHT := 1024
+TARGET_SCREEN_WIDTH  := 600
