@@ -9,10 +9,7 @@ PRODUCT_AAPT_CONFIG      := large mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_LOCALES          += mdpi
 
-PRODUCT_COPY_FILES += \
-	device/samsung/goya/recovery/root/init.rc:recovery/root/init.rc \
-	device/samsung/goya/recovery/root/ueventd.pxa988.rc:recovery/root/ueventd.pxa988.rc \
-	device/samsung/goya/recovery/root/ffs-check.sh:recovery/root/ffs-check.sh
+PRODUCT_COPY_FILES += device/samsung/goya/recovery/root/init.recovery.usb.rc:$(TARGET_COPY_OUT_ROOT)/init.recovery.usb.rc
 
 # Charger
 PRODUCT_PACKAGES += \
