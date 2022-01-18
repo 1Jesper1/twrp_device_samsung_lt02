@@ -4,13 +4,6 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, build/target/product/full_base_telephony.mk)
 $(call inherit-product, build/target/product/languages_full.mk)
 
-$(call inherit-product, device/samsung/goya/healthd_mrvl/health.mk)
-
-# Enable higher-res drawables while keeping mdpi as primary source
-PRODUCT_AAPT_CONFIG      := large mdpi hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-PRODUCT_LOCALES          += mdpi
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images \
