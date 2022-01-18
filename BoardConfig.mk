@@ -106,7 +106,6 @@ RECOVERY_SDCARD_ON_DATA := false
 # MRVL hardware + Graphics
 BOARD_USES_MRVL_HARDWARE          := true
 MRVL_ION                          := true
-BOARD_HAL_STATIC_LIBRARIES        := libhealthd.mrvl
 MRVL_INTERFACE_ANIMATION          := true
 TARGET_FORCE_CPU_UPLOAD           := true
 USE_OPENGL_RENDERER               := true
