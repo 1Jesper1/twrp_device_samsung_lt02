@@ -75,7 +75,7 @@ RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
 RECOVERY_GRAPHICS_USE_LINELENGTH      := true
 
 # TODO: Fix timeout instead of directly bypassing it
-TW_NO_SCREEN_TIMEOUT    := true
+TW_NO_SCREEN_TIMEOUT    := false
 TW_NO_SCREEN_BLANK      := true
 
 TW_NO_REBOOT_BOOTLOADER := true
@@ -94,8 +94,8 @@ TW_USE_TOOLBOX               := false
 TW_INCLUDE_FUSE_EXFAT        := true
 TW_INCLUDE_CRYPTO            := false
 TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-TW_NO_CPU_TEMP               := true
-TW_NO_HAPTICS                := true
+TW_NO_CPU_TEMP               := false
+TW_NO_HAPTICS                := false
 TW_EXTRA_LANGUAGES           := true
 
 RECOVERY_SDCARD_ON_DATA := false
