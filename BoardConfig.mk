@@ -23,9 +23,7 @@ TARGET_NO_RADIOIMAGE := true
 
 
 # Kernel
-# TARGET_PREBUILT_KERNEL := device/samsung/goya/prebuilt/zImage
-TARGET_KERNEL_SOURCE     := kernel/samsung/goya
-TARGET_KERNEL_CONFIG     := recovery_goya_defconfig
+TARGET_PREBUILT_KERNEL := device/samsung/goya/prebuilt/zImage
 
 BOARD_KERNEL_CMDLINE     := androidboot.selinux=permissive androidboot.hardware=pxa988
 BOARD_KERNEL_BASE        := 0x10000000
