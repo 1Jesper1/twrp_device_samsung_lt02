@@ -1,4 +1,10 @@
+import /init.recovery.logd.rc
+import /init.recovery.ldconfig.rc
+import /init.recovery.mksh.rc
+#import /init.recovery.usb.rc
 import /init.recovery.service.rc
+import /init.recovery.vold_decrypt.rc
+import /init.recovery.${ro.hardware}.rc
 
 on early-init
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
@@ -12,7 +18,6 @@ on early-init
     restorecon /postinstall
 
     start ueventd
-    start healthd
 
 service set_permissive /sbin/toolbox setenforce 0
     oneshot
@@ -25,6 +30,9 @@ on init
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /external_sd
     export SECONDARY_STORAGE /external_sd
+
+    mount cgroup none /acct cpuacct
+    mkdir /acct/uid
 
 # Right now vendor lives on the same filesystem as system,
 # but someday that may change.
@@ -122,14 +130,9 @@ on late-init
 on property:sys.powerctl=*
    powerctl ${sys.powerctl}
 
-
 service ueventd /sbin/ueventd
     critical
     seclabel u:r:ueventd:s0
-
-service healthd /sbin/healthd -r
-    critical
-    seclabel u:r:healthd:s0
 
 service adbd /sbin/adbd --root_seclabel=u:r:su:s0 --device_banner=recovery
     disabled
