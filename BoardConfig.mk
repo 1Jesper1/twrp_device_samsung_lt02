@@ -76,7 +76,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH      := true
 
 # TODO: Fix timeout instead of directly bypassing it
 TW_NO_SCREEN_TIMEOUT    := false
-TW_NO_SCREEN_BLANK      := true
+TW_NO_SCREEN_BLANK      := false
 
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE    := true
