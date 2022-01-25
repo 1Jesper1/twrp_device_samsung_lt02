@@ -1,1 +1,1 @@
-- [ ] Fix timeout instead of disabling it completely
+- [ ] Fix Marvell I2C *(healthd-related issues)*

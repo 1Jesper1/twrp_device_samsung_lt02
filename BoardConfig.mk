@@ -73,9 +73,9 @@ TARGET_RECOVERY_INITRC := device/samsung/goya/recovery/root/init.rc
 RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
 RECOVERY_GRAPHICS_USE_LINELENGTH      := true
 
-# TODO: Fix timeout instead of directly bypassing it
-TW_NO_SCREEN_TIMEOUT    := false
-TW_NO_SCREEN_BLANK      := false
+# TODO: Fix Marvell I2C for these to be disabled
+TW_NO_SCREEN_TIMEOUT    := true
+TW_NO_SCREEN_BLANK      := true
 
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE    := true
