@@ -6,7 +6,7 @@
 # function: add_lunch_combo generic-eng
 
 PRODUCT="omni"
-DEVICE="goya"
+DEVICE="lt02"
 
 for i in eng user; do
 add_lunch_combo ${PRODUCT}_${DEVICE}-${i};
