@@ -1,3 +1,4 @@
+COMPRESS_COMMAND := xz --format=lzma
 LOCAL_PATH := $(call my-dir)
 
 FLASH_IMAGE_TARGET ?= $(PRODUCT_OUT)/recovery.tar
