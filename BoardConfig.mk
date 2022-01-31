@@ -88,13 +88,13 @@ SP1_NAME                        := "efs"
 SP1_BACKUP_METHOD               := files
 
 TW_EXCLUDE_TWRPAPP           := true
-TW_USE_TOOLBOX               := false
+TW_USE_TOOLBOX               := true
 TW_INCLUDE_FUSE_EXFAT        := true
 TW_INCLUDE_CRYPTO            := false
 TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_NO_CPU_TEMP               := true
 TW_NO_HAPTICS                := true
-TW_EXTRA_LANGUAGES           := true
+TW_EXTRA_LANGUAGES           := false
 
 RECOVERY_SDCARD_ON_DATA := false
 
